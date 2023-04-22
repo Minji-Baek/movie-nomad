@@ -56,7 +56,7 @@
                 setStance(e.target.value);
             };
             const onInvert = () => {
-                reset;
+                reset();
                 setInvert((current) => !current);
             };
             const reset = (e) => {console.log(e); setStance(0)};
