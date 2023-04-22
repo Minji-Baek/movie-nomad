@@ -9,12 +9,12 @@
     <script type="text/babel">
         function App() {
             const [amounts, setAmounts] = React.useState(0); // 시간의 value state
-            const [fliped, setFlipped] = React.useState(false); // 변경 불가 항목 설정 state
+            const [inverted, setFlipped] = React.useState(false); // 변경 불가 항목 설정 state
             const onChange = (event) => {
                 setAmounts(event.target.value) //이벤트 타겟의 value를 amounts로 setting 합니다. 근데 이게 두input의 onchange랑 연결되있음=>change가능한 input의 변경된 value가 amount로 설정
             };
             const reset= () => setAmounts(0); //reset 함수
-            const onFlip = () => { //flip 버튼 클릭시 실행되는 함수
+            const onInverted = () => { //flip 버튼 클릭시 실행되는 함수
                 reset();
                 setFlipped((current)=> !current);
             } 
@@ -24,27 +24,27 @@
                     <div>
                         <label htmlFor="minutes">Minutes</label>
                         <input 
-                            value={fliped ? amounts * 60 : amounts} // flip === true 면 hour이 기준 => minutes은 x60이 됨
+                            value={inverted ? amounts * 60 : amounts} // flip === true 면 hour이 기준 => minutes은 x60이 됨
                             id="minutes" 
                             onChange={onChange}
                             placeholder="Minutes" 
                             type="number" 
-                            disabled={fliped}
+                            disabled={inverted}
                         />
                     </div>
                     <div>
                         <label htmlFor="hours">Hours</label>
                         <input 
-                            value={fliped ? amounts : Math.round(amounts / 60)} // flip === false 면 miniutes이 기준 => hours은 /60이 됨
+                            value={inverted ? amounts : Math.round(amounts / 60)} // flip === false 면 miniutes이 기준 => hours은 /60이 됨
                             id="hours" 
                             placeholder="Hours" 
                             type="number"
                             onChange={onChange}
-                            disabled={!fliped}
+                            disabled={!inverted}
                         />
                     </div>
                     <button onClick={reset}>Reset</button>
-                    <button onClick={onFlip}>Flip</button>
+                    <button onClick={onInverted}>{inverted ? "Turn Back" : "Invert"}</button>
 
                 </div>
             )
