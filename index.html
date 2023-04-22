@@ -7,22 +7,49 @@
     <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
-        const root = document.getElementById("root");
-        let counter=0;
         function App() {
-            const [counter, setCounter] = React.useState(0); //바뀌는 변수는 counter 이며 바뀌는 함수는 setCounter, 0은 초기값
-            const onClick = () => {
-               // setCounter(counter+1); //onClick 이벤트 실행시 counter 변수가 바뀌는 setCounter가 실행되고 rerendering 된다.
-                setCounter( (current)=>current+1); //위의 직접적인 식보다 함수를 인자로 보내는것이 counter의 현재의 값을 잘 알 수 있다.
-            }
+            const [amounts, setAmounts] = React.useState(0); // 시간의 value state
+            const [fliped, setFlipped] = React.useState(false); // 변경 불가 항목 설정 state
+            const onChange = (event) => {
+                setAmounts(event.target.value) //이벤트 타겟의 value를 amounts로 setting 합니다. 근데 이게 두input의 onchange랑 연결되있음=>change가능한 input의 변경된 value가 amount로 설정
+            };
+            const reset= () => setAmounts(0); //reset 함수
+            const onFlip = () => { //flip 버튼 클릭시 실행되는 함수
+                reset();
+                setFlipped((current)=> !current);
+            } 
             return (
                 <div>
-                    <h3>Total clicks: {counter}</h3>
-                    <button onClick={onClick}>Click me</button>
+                    <h1>Super Converter</h1>
+                    <div>
+                        <label htmlFor="minutes">Minutes</label>
+                        <input 
+                            value={fliped ? amounts * 60 : amounts} // flip === true 면 hour이 기준 => minutes은 x60이 됨
+                            id="minutes" 
+                            onChange={onChange}
+                            placeholder="Minutes" 
+                            type="number" 
+                            disabled={fliped}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="hours">Hours</label>
+                        <input 
+                            value={fliped ? amounts : Math.round(amounts / 60)} // flip === false 면 miniutes이 기준 => hours은 /60이 됨
+                            id="hours" 
+                            placeholder="Hours" 
+                            type="number"
+                            onChange={onChange}
+                            disabled={!fliped}
+                        />
+                    </div>
+                    <button onClick={reset}>Reset</button>
+                    <button onClick={onFlip}>Flip</button>
+
                 </div>
             )
-                    
-        }
+        }   
+        const root = document.getElementById("root");
         ReactDOM.render(<App />, root);
     </script>
 </html>
