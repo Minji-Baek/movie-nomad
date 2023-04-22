@@ -12,7 +12,8 @@
         function App() {
             const [counter, setCounter] = React.useState(0); //바뀌는 변수는 counter 이며 바뀌는 함수는 setCounter, 0은 초기값
             const onClick = () => {
-                setCounter(counter+1); //onClick 이벤트 실행시 counter 변수가 바뀌는 setCounter가 실행되고 rerendering 된다.
+               // setCounter(counter+1); //onClick 이벤트 실행시 counter 변수가 바뀌는 setCounter가 실행되고 rerendering 된다.
+                setCounter( (current)=>current+1); //위의 직접적인 식보다 함수를 인자로 보내는것이 counter의 현재의 값을 잘 알 수 있다.
             }
             return (
                 <div>
