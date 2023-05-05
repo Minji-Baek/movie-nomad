@@ -1,82 +1,33 @@
-# Getting Started with Create React App
+# Git 내가 쓰려고 정리 하는 ReadMe
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  맨날 헷갈리니깐 그냥 한번에 정리해놓자
 
-## Available Scripts
+## git 처음에 연결할 떄 쓸만한 것들
 
-In the project directory, you can run:
+### `git init`
+### `git remote add [이름] [url]`
 
-### `npm start`
+### `git remote -v`
+### `git clone [url]`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### `git pull [리모트 저장소 이름임 ㅋ] [브랜치이름]`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `git checkout -b [브랜치 이름]`
 
-### `npm test`
+You asked to pull from the remote 'origin', but did not specify       
+a branch. Because this is not the default configured remote
+for your current branch, you must specify a branch on the command line
+=> 
+### `git branch -u [리모트 브랜치] [브랜치]`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  -해당 브랜치가 이제 리모트 브랜치를 tracking 시작하게 된다.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+src refspec main does not match any
+=> pull 없이 push 하는 경어 , 혹은 해당 브런치가 없는 경우
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+git pull origin master 했는 데 오류 문이 아래라면 
+fatal: refusing to merge unrelated histories
+=>
+### `git pull origin master --allow-unrelated-historie`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# movie-nomad
-노마드코더에서 영화웹사이트 만들기 프로젝트 
-
-2023.04.22
-프로젝트 전 state 연습 문제 converter 만들기를 netlify 사용하여 https로 배포까지 해봤다.
-https://super-converter-bmj.netlify.app
-# movie-nomad
-노마드코더에서 영화웹사이트 만들기 프로젝트 
-
-2023.04.22
-프로젝트 전 state 연습 문제 converter 만들기를 netlify 사용하여 https로 배포까지 해봤다.
-https://super-converter-bmj.netlify.app
