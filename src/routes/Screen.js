@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Detail from "../components/Detail";
+import Loading from "../components/Loading";
+import "./Home.modules.css"
+
 function Screen() {
   const {id} = useParams();
   const [loading, setloading] = useState(true);
@@ -17,20 +20,19 @@ function Screen() {
     getMovie();
   }, []);
   return (
-    <div>
-      {loading ? ( <h1>loading...</h1> ) : (
-        <div>
-        <Detail 
-          coverImg={movie.medium_cover_image}
-          title={movie.title}
-          genres={movie.genres}
-          year={movie.year}
-          rating={movie.rating}
-          language={movie.language} 
-          runtime={movie.runtime}
-          url={movie.url}
-        />
-      </div>)}
+    <div >
+      {loading ? <Loading />  : (
+          <Detail 
+            coverImg={movie.medium_cover_image}
+            title={movie.title}
+            genres={movie.genres}
+            year={movie.year}
+            rating={movie.rating}
+            language={movie.language} 
+            runtime={movie.runtime}
+            url={movie.url}
+          />
+     )}
   </div>
   )
 }

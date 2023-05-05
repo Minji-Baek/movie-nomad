@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react';
+import "./Detail.Modules.css"
 
 function Detail({coverImg, title, genres, year, rating ,language, runtime, url}) {
   const [time, setTime] = useState(0);
@@ -12,14 +13,14 @@ function Detail({coverImg, title, genres, year, rating ,language, runtime, url})
   } , []);
 
   return (
-    <div style={{textAlign: 'center'}}>
-        <img src={coverImg} alt={title} />
-        <p>{title}</p>
-        <p>{year}</p>
-        <p>{genreStr}</p>
-        <p>{rating} / 10 </p> 
-        <p>{language}</p>
-        <p>{time}</p> hours <p> {runtime - (time*60) }</p> mins 
+    <div className='detail'>
+      <img src={coverImg} alt={title} />
+        <div>{title}</div>
+        <div>{year}</div>
+        <div>{genreStr}</div>
+        <div>{rating} / 10 </div> 
+        <div>{language}</div>
+        <div>{time}</div> hours <div> {runtime - (time*60) }</div> mins 
     </div>
   );
 }

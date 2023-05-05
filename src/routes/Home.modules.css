@@ -1,0 +1,18 @@
+.home-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 35vh;
+  font-size: xxx-large;
+  font-weight: bold;
+}
+
+.movie-list{
+  position: relative;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+  height: 65vh;
+  align-items: center;
+}
