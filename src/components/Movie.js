@@ -4,7 +4,7 @@ function Movie({coverImg, title, genres, id}) {
   return (<div style={{textAlign: 'center'}}>
     <img src={coverImg} alt={title} />
     <h2>
-      <Link to={`/movie/${id}`}>{title}</Link>
+      <Link to={`${process.env.PUBLIC_URL}/movie/${id}`}>{title}</Link>
       </h2>
     
     <ul>
