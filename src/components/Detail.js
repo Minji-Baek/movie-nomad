@@ -20,7 +20,7 @@ function Detail({coverImg, title, genres, year, rating ,language, runtime, url})
         <div>{genreStr}</div>
         <div>{rating} / 10 </div> 
         <div>{language}</div>
-        <div>{time}</div> hours <div> {runtime - (time*60) }</div> mins 
+        <div>{`${time} hours  ${runtime - (time*60)} mins `}</div> 
     </div>
   );
 }
