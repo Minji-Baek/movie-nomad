@@ -4,12 +4,11 @@ import Screen from "./routes/Screen";
 
 
 function App() {
-  const baseUrl = `${process.env.PUBLIC_URL}/`
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Routes>
-        <Route path={baseUrl} element={<Home />} />
-        <Route path={baseUrl + `movie/:id`} element={<Screen />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/movie/:id" element={<Screen />} />
       </Routes>
     </Router>
     );

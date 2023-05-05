@@ -2,9 +2,9 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 function Movie({coverImg, title, genres, id}) {
   return (<div style={{textAlign: 'center'}}>
-    <img src={coverImg} alt={title} />
+    <img src={coverImg} alt={title} />ㄴㅇ
     <h2>
-      <Link to={`${process.env.PUBLIC_URL}/movie/${id}`}>{title}</Link>
+      <Link to={`/movie/${id}`}>{title}</Link>
       </h2>
     
     <ul>
