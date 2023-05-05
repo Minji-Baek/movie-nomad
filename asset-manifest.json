@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/movie-nomad/static/css/main.e6c13ad2.css",
+    "main.js": "/movie-nomad/static/js/main.9cc86b3f.js",
+    "index.html": "/movie-nomad/index.html",
+    "main.e6c13ad2.css.map": "/movie-nomad/static/css/main.e6c13ad2.css.map",
+    "main.9cc86b3f.js.map": "/movie-nomad/static/js/main.9cc86b3f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.9cc86b3f.js"
+  ]
+}
