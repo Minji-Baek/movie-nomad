@@ -8,19 +8,23 @@ function Detail({coverImg, title, genres, year, rating ,language, runtime, url})
 
   useEffect( () => {
     setTime((current) => current = Math.trunc(runtime/60))
-    console.log("time",time);
     setGenstr((currnetStr) => currnetStr = genres.join(' / '));
   } , []);
 
   return (
+    //table로 바꾸자
     <div className='detail'>
       <img src={coverImg} alt={title} />
-        <div>{title}</div>
-        <div>{year}</div>
-        <div>{genreStr}</div>
-        <div>{rating} / 10 </div> 
-        <div>{language}</div>
-        <div>{`${time} hours  ${runtime - (time*60)} mins `}</div> 
+      <div className='title'>{title}</div>
+      <div className='year'>{year}</div>
+      <div className='row'>
+        <div className='genre'>{genreStr}</div>
+        <div className='rating'>{rating} / 10 </div> 
+      </div>
+      <div className='row'>
+        <div className='language'>{language}</div>
+        <div className='time'>{`${time} hours  ${runtime - (time*60)} mins `}</div> 
+      </div>
     </div>
   );
 }

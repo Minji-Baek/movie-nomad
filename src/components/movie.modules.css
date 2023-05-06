@@ -1,6 +1,6 @@
 .movie{
   padding: 30px;
-  background-color: aqua;
+  /* background-color: rgb(185, 255, 255); */
   display: flex;
   flex-direction: column;
   height: 100%;

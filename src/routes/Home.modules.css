@@ -1,8 +1,7 @@
 .home-title{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 35vh;
+  text-align: center;
+  margin-top: 10vh;
+  min-height: 25vh;
   font-size: xxx-large;
   font-weight: bold;
 }
@@ -15,4 +14,12 @@
   flex-wrap: nowrap;
   height: 65vh;
   align-items: center;
+}
+
+.home-title-range{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+  padding: 5px;
 }

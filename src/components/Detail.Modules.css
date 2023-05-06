@@ -1,4 +1,46 @@
-.detail{
+.detail {
   margin: 2%;
   text-align: center;
+}
+
+.row{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15px;
+  font-size: small;
+}
+
+.title{
+  font-size: xxx-large;
+  font-weight: bold;
+  padding-bottom: 5%;
+  font-style: italic;
+}
+
+.year{
+  font-size: larger;
+  padding: 1%;
+}
+
+.genre{
+  padding: 1%;
+
+}
+
+.rating{
+  border-left: 1px dashed gray;
+  padding: 1%;
+
+}
+
+.language{
+  padding: 0 4% 0 6.9%;
+
+}
+
+.time{
+  border-left: 1px dashed gray;
+  padding: 1%;
+
 }
