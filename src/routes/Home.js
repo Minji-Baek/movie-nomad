@@ -6,13 +6,12 @@ import "./Home.modules.css"
 function Home(){
   const [loading, setloading] = useState(true);
   const [movies, setMovies] = useState([]);
-  const [range, setRange] = useState(7);
+  const [range, setRange] = useState(9);
   useEffect( ()=> {
     setloading(true);
     return getMovies;
   }, [range]);
-
-
+  
   const getMovies = async() => {
     const json = await (
       await fetch(`https://yts.mx/api/v2/list_movies.json?minimum_rating=${range}&sort_by=year`)
