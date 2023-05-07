@@ -9,7 +9,7 @@ function Home(){
   const [range, setRange] = useState(9);
   useEffect( ()=> {
     setloading(true);
-    return getMovies;
+     getMovies();
   }, [range]);
   
   const getMovies = async() => {
